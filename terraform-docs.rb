@@ -5,16 +5,16 @@
 class TerraformDocs < Formula
   desc "Generate documentation from Terraform modules in various output formats"
   homepage "https://github.com/terraform-docs/"
-  version "0.11.1"
+  version "0.11.2"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/terraform-docs/terraform-docs/releases/download/v0.11.1/terraform-docs-v0.11.1-darwin-amd64.tar.gz"
-    sha256 "4110d08e9aafcfa40a90ab294c8a34b002b12cb34fc908f1cdc510b0055bd61c"
+    url "https://github.com/terraform-docs/terraform-docs/releases/download/v0.11.2/terraform-docs-v0.11.2-darwin-amd64.tar.gz"
+    sha256 "ac7ce685dea91212199c58de2379b419a5f512f70eda08b435176c1b5594716c"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/terraform-docs/terraform-docs/releases/download/v0.11.1/terraform-docs-v0.11.1-linux-amd64.tar.gz"
-    sha256 "1bb6748e808c5675d2ea3f9ba40144566b016c0468b497e59ee9822dfc14c664"
+    url "https://github.com/terraform-docs/terraform-docs/releases/download/v0.11.2/terraform-docs-v0.11.2-linux-amd64.tar.gz"
+    sha256 "daae08cc21d639bb88697d6caae7efc8eb17c44ff30aff7e801bd4d34ac8372c"
   end
 
   def install
