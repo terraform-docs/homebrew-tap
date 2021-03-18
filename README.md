@@ -1,4 +1,5 @@
-# homebrew-tap
+# Homebrew Tap
+
 Homebrew formulas for terraform-docs
 
 ## Usage
