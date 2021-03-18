@@ -1,6 +1,8 @@
 # Homebrew Tap
 
-Homebrew formulas for terraform-docs
+[Homebrew](https://docs.brew.sh/) formulas for [terraform-docs](https://github.com/terraform-docs/terraform-docs/).
+
+Managed with [goreleaser](https://goreleaser.com/).
 
 ## Usage
 
