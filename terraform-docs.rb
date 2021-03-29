@@ -5,28 +5,28 @@
 class TerraformDocs < Formula
   desc "Generate documentation from Terraform modules in various output formats"
   homepage "https://github.com/terraform-docs/"
-  version "0.12.0"
+  version "0.12.1"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/terraform-docs/terraform-docs/releases/download/v0.12.0/terraform-docs-v0.12.0-darwin-amd64.tar.gz"
-    sha256 "268de3fa6ee486cf2b762483bbaff93d2bc33703f4ad23fa9e7267031c289087"
+    url "https://github.com/terraform-docs/terraform-docs/releases/download/v0.12.1/terraform-docs-v0.12.1-darwin-amd64.tar.gz"
+    sha256 "bdd3fe27212bc1db2671252880a18c2592ed8e305a07ab63f465160fa62358cd"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/terraform-docs/terraform-docs/releases/download/v0.12.0/terraform-docs-v0.12.0-darwin-arm64.tar.gz"
-    sha256 "efde5e0c6707b338e76f9e1f9e341efa85d87bfd278a82b347d504b2763b5fab"
+    url "https://github.com/terraform-docs/terraform-docs/releases/download/v0.12.1/terraform-docs-v0.12.1-darwin-arm64.tar.gz"
+    sha256 "df4740b99a30c4e287636a26774f3d15d1b090818f983650385c183feeca661b"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/terraform-docs/terraform-docs/releases/download/v0.12.0/terraform-docs-v0.12.0-linux-amd64.tar.gz"
-    sha256 "85f47b2d2ed778113601d6a86dde6eea0923890ebdf1f8c31a0936723cacc92d"
+    url "https://github.com/terraform-docs/terraform-docs/releases/download/v0.12.1/terraform-docs-v0.12.1-linux-amd64.tar.gz"
+    sha256 "79aaa6ed0ae9c63567cef10349a943a50030d3ed7d16894760ce446f249f9cb1"
   end
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/terraform-docs/terraform-docs/releases/download/v0.12.0/terraform-docs-v0.12.0-linux-arm.tar.gz"
-    sha256 "54f7139c11d2cb729bdbaa26e709f40573faa1ac51bad9e1377ca147217755d6"
+    url "https://github.com/terraform-docs/terraform-docs/releases/download/v0.12.1/terraform-docs-v0.12.1-linux-arm.tar.gz"
+    sha256 "ee2c56221a4dbb79bd5df846f12e2f356e5443caf9ef1b1a4d0e1122a5193539"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/terraform-docs/terraform-docs/releases/download/v0.12.0/terraform-docs-v0.12.0-linux-arm64.tar.gz"
-    sha256 "4f21e57eedbbeb3a904cefd403ec82d638c25a47d0ae66c4dc1ab15046e65e60"
+    url "https://github.com/terraform-docs/terraform-docs/releases/download/v0.12.1/terraform-docs-v0.12.1-linux-arm64.tar.gz"
+    sha256 "18a08667031115e314ca2e12ed3caa2c09f6e003cc76f11ba5b304adc86fbcb1"
   end
 
   def install
