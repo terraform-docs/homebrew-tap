@@ -5,37 +5,52 @@
 class TerraformDocs < Formula
   desc "Generate documentation from Terraform modules in various output formats"
   homepage "https://github.com/terraform-docs/"
-  version "0.16.0"
-  bottle :unneeded
+  version "0.17.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/terraform-docs/terraform-docs/releases/download/v0.16.0/terraform-docs-v0.16.0-darwin-amd64.tar.gz"
-      sha256 "f48422e2e3c4a30852992177db17cb37b18810a3e8392401ba69e875c8bb1090"
-    end
     if Hardware::CPU.arm?
-      url "https://github.com/terraform-docs/terraform-docs/releases/download/v0.16.0/terraform-docs-v0.16.0-darwin-arm64.tar.gz"
-      sha256 "a7f0c2437424b20d89315d2a7b0581e7d32fde539d0b06c49403949df1ee62ea"
+      url "https://github.com/terraform-docs/terraform-docs/releases/download/v0.17.0/terraform-docs-v0.17.0-darwin-arm64.tar.gz"
+      sha256 "23d83eb036154a3de1a2af82e6f772b06bd6df08398208d43c8ca56f69d0456c"
+
+      def install
+        bin.install "terraform-docs"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/terraform-docs/terraform-docs/releases/download/v0.17.0/terraform-docs-v0.17.0-darwin-amd64.tar.gz"
+      sha256 "846c0a40116f748aa900bb9abb704b34e40657d9f9acc807ab94b66355c0eb2e"
+
+      def install
+        bin.install "terraform-docs"
+      end
     end
   end
 
   on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/terraform-docs/terraform-docs/releases/download/v0.17.0/terraform-docs-v0.17.0-linux-arm64.tar.gz"
+      sha256 "4189c4d0b418e5bcc642836b7f73e80d5d4d82b75ada73a7b78f923588d5f765"
+
+      def install
+        bin.install "terraform-docs"
+      end
+    end
     if Hardware::CPU.intel?
-      url "https://github.com/terraform-docs/terraform-docs/releases/download/v0.16.0/terraform-docs-v0.16.0-linux-amd64.tar.gz"
-      sha256 "328c16cd6552b3b5c4686b8d945a2e2e18d2b8145b6b66129cd5491840010182"
+      url "https://github.com/terraform-docs/terraform-docs/releases/download/v0.17.0/terraform-docs-v0.17.0-linux-amd64.tar.gz"
+      sha256 "8e436d0c44db49c2ccd95deede05c3deba324b34a274be06cd9ba9cdf644e795"
+
+      def install
+        bin.install "terraform-docs"
+      end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/terraform-docs/terraform-docs/releases/download/v0.16.0/terraform-docs-v0.16.0-linux-arm.tar.gz"
-      sha256 "8b2ba1a0ffefe4cb05c3a7a4cc9203da2f64331ee4062ca1a4ec8226cc1651de"
-    end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/terraform-docs/terraform-docs/releases/download/v0.16.0/terraform-docs-v0.16.0-linux-arm64.tar.gz"
-      sha256 "8208c19c7dc01660e6caefe32e33ac02e0e03fdc2e2ade0bb37abb6349153d25"
-    end
-  end
+      url "https://github.com/terraform-docs/terraform-docs/releases/download/v0.17.0/terraform-docs-v0.17.0-linux-arm.tar.gz"
+      sha256 "9457a700d99601f2c50bfe9613e6ff3b6e87d0df5ed0620c0b103de26ae66e09"
 
-  def install
-    bin.install "terraform-docs"
+      def install
+        bin.install "terraform-docs"
+      end
+    end
   end
 
   test do
